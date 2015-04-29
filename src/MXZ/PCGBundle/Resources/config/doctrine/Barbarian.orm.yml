@@ -1,0 +1,31 @@
+MXZ\PCGBundle\Entity\Barbarian:
+    type: entity
+    table: null
+    repositoryClass: MXZ\PCGBundle\Entity\BarbarianRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        bAB:
+            type: integer
+            column: BAB
+        dice:
+            type: integer
+            column: Dice
+        fort:
+            type: integer
+            column: Fort
+        ref:
+            type: integer
+            column: Ref
+        will:
+            type: integer
+            column: Will
+        special:
+            type: string
+            length: 255
+            column: Special
+    lifecycleCallbacks: {  }

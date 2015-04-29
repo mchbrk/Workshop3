@@ -1,0 +1,55 @@
+MXZ\PCGBundle\Entity\Characters:
+    type: entity
+    table: null
+    repositoryClass: MXZ\PCGBundle\Entity\CharactersRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        level:
+            type: string
+            length: 255
+        alignment:
+            type: string
+            length: '2'
+        race:
+            type: integer
+        size:
+            type: string
+            length: 255
+        hP:
+            type: integer
+            column: HP
+        dR:
+            type: string
+            length: 255
+            column: DR
+        initiative:
+            type: integer
+            column: Initiative
+        skills:
+            type: string
+            length: 255
+            column: Skills
+        feats:
+            type: string
+            length: 255
+            column: Feats
+        specialAbilities:
+            type: string
+            length: 255
+            column: 'Special_Abilities'
+        languages:
+            type: string
+            length: 255
+            column: Languages
+        xP:
+            type: integer
+            column: XP
+    lifecycleCallbacks: {  }

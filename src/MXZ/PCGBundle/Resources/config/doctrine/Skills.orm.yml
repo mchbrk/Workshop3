@@ -1,0 +1,53 @@
+MXZ\PCGBundle\Entity\Skills:
+    type: entity
+    table: null
+    repositoryClass: MXZ\PCGBundle\Entity\SkillsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        skill:
+            type: string
+            length: 255
+        ability:
+            type: string
+            length: 255
+        untrained:
+            type: boolean
+        bbn:
+            type: boolean
+            column: Bbn
+        brd:
+            type: boolean
+            column: Brd
+        clr:
+            type: boolean
+            column: Clr
+        drd:
+            type: boolean
+            column: Drd
+        ftr:
+            type: boolean
+            column: Ftr
+        mnk:
+            type: boolean
+            column: Mnk
+        pal:
+            type: boolean
+            column: Pal
+        rgr:
+            type: boolean
+            column: Rgr
+        rog:
+            type: boolean
+            column: Rog
+        sor:
+            type: boolean
+            column: Sor
+        wiz:
+            type: boolean
+            column: Wiz
+    lifecycleCallbacks: {  }

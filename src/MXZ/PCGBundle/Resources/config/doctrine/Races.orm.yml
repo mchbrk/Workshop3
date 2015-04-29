@@ -1,0 +1,37 @@
+MXZ\PCGBundle\Entity\Races:
+    type: entity
+    table: null
+    repositoryClass: MXZ\PCGBundle\Entity\RacesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        race:
+            type: string
+            length: 255
+        sTR:
+            type: integer
+            column: STR
+        dEX:
+            type: integer
+            column: DEX
+        cON:
+            type: integer
+            column: CON
+        iNTe:
+            type: integer
+            column: INTe
+        wIS:
+            type: integer
+            column: WIS
+        cHA:
+            type: integer
+            column: CHA
+        traits:
+            type: string
+            length: 255
+            column: Traits
+    lifecycleCallbacks: {  }

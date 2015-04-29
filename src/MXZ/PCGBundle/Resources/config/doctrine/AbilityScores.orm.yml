@@ -1,0 +1,14 @@
+MXZ\PCGBundle\Entity\AbilityScores:
+    type: entity
+    table: null
+    repositoryClass: MXZ\PCGBundle\Entity\AbilityScoresRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        modifier:
+            type: integer
+    lifecycleCallbacks: {  }

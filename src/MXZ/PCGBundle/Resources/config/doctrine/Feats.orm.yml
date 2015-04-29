@@ -1,0 +1,42 @@
+MXZ\PCGBundle\Entity\Feats:
+    type: entity
+    table: null
+    repositoryClass: MXZ\PCGBundle\Entity\FeatsRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        feat:
+            type: string
+            length: 255
+            column: Feat
+        prerequisites:
+            type: string
+            length: 255
+            column: Prerequisites
+        benefit:
+            type: string
+            length: 255
+            column: Benefit
+        url:
+            type: string
+            length: 255
+        combat:
+            type: boolean
+            column: Combat
+        panache:
+            type: boolean
+            column: Panache
+        style:
+            type: boolean
+            column: Style
+        metamagic:
+            type: boolean
+            column: Metamagic
+        teamwork:
+            type: boolean
+            column: Teamwork
+    lifecycleCallbacks: {  }

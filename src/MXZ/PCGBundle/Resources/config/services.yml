@@ -1,0 +1,4 @@
+services:
+#    mxzpcg.example:
+#        class: MXZ\PCGBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
