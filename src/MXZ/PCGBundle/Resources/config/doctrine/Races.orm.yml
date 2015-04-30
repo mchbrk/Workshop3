@@ -8,6 +8,10 @@ MXZ\PCGBundle\Entity\Races:
             id: true
             generator:
                 strategy: AUTO
+    oneToMany:
+        characters:
+            targetEntity: Characters
+            mappedBy: race
     fields:
         race:
             type: string
@@ -34,4 +38,12 @@ MXZ\PCGBundle\Entity\Races:
             type: string
             length: 255
             column: Traits
+        size:
+            type: string
+            length: 255
+            column: size
+        speed:
+            type: integer
+            column: speed
+
     lifecycleCallbacks: {  }

@@ -1,0 +1,35 @@
+characters:
+    path:     /
+    defaults: { _controller: "MXZPCGBundle:Characters:index" }
+
+characters_show:
+    path:     /{id}/show
+    defaults: { _controller: "MXZPCGBundle:Characters:show" }
+
+characters_new:
+    path:     /new
+    defaults: { _controller: "MXZPCGBundle:Characters:new" }
+
+characters_create:
+    path:     /create
+    defaults: { _controller: "MXZPCGBundle:Characters:create" }
+    methods:  POST
+
+characters_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "MXZPCGBundle:Characters:edit" }
+
+characters_update:
+    path:     /{id}/update
+    defaults: { _controller: "MXZPCGBundle:Characters:update" }
+    methods:  [POST, PUT]
+
+characters_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "MXZPCGBundle:Characters:delete" }
+    methods:  [POST, DELETE]
+
+characters_addxp:
+    path:     /{id}/addXP
+    defaults: { _controller: "MXZPCGBundle:Characters:addxp" }
+    methods:  [PUT, GET, POST, DELETE]

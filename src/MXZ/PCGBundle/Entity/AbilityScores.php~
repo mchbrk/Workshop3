@@ -52,6 +52,4 @@ class AbilityScores
         return $this->modifier;
     }
 
-    private $characters;
-
 }

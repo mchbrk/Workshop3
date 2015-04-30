@@ -1,0 +1,63 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Characters list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Level</th>
+                <th>Alignment</th>
+                <th>Size</th>
+                <th>Hp</th>
+                <th>Dr</th>
+                <th>Initiative</th>
+                <th>Skills</th>
+                <th>Feats</th>
+                <th>Specialabilities</th>
+                <th>Languages</th>
+                <th>Xp</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('characters_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.name }}</td>
+                <td>{{ entity.level }}</td>
+                <td>{{ entity.alignment }}</td>
+                <td>{{ entity.size }}</td>
+                <td>{{ entity.hP }}</td>
+                <td>{{ entity.dR }}</td>
+                <td>{{ entity.initiative }}</td>
+                <td>{{ entity.skills }}</td>
+                <td>{{ entity.feats }}</td>
+                <td>{{ entity.specialAbilities }}</td>
+                <td>{{ entity.languages }}</td>
+                <td>{{ entity.xP }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('characters_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('characters_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('characters_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

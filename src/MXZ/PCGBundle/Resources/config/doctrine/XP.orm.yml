@@ -1,0 +1,18 @@
+MXZ\PCGBundle\Entity\XP:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        xp:
+            type: integer
+        feats:
+            type: boolean
+        abilityScores:
+            type: boolean
+            column: ability_scores
+    lifecycleCallbacks: {  }

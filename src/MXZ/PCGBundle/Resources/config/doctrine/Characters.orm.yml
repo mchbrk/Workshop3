@@ -8,6 +8,49 @@ MXZ\PCGBundle\Entity\Characters:
             id: true
             generator:
                 strategy: AUTO
+    manyToOne:
+        race:
+            targetEntity: Races
+            inversedBy: characters
+            joinColumn:
+                name: race
+                referencedColumnName: id
+        STR:
+            targetEntity: AbilityScores
+            inversedBy: characters
+            joinColumn:
+                name: STR
+                referencedColumnName: id
+        DEX:
+            targetEntity: AbilityScores
+            inversedBy: characters
+            joinColumn:
+                name: DEX
+                referencedColumnName: id
+        CON:
+            targetEntity: AbilityScores
+            inversedBy: characters
+            joinColumn:
+                name: CON
+                referencedColumnName: id
+        INTe:
+            targetEntity: AbilityScores
+            inversedBy: characters
+            joinColumn:
+                name: INTe
+                referencedColumnName: id
+        WIS:
+            targetEntity: AbilityScores
+            inversedBy: characters
+            joinColumn:
+                name: WIS
+                referencedColumnName: id
+        CHA:
+            targetEntity: AbilityScores
+            inversedBy: characters
+            joinColumn:
+                name: CHA
+                referencedColumnName: id
     fields:
         name:
             type: string
@@ -18,8 +61,6 @@ MXZ\PCGBundle\Entity\Characters:
         alignment:
             type: string
             length: '2'
-        race:
-            type: integer
         size:
             type: string
             length: 255

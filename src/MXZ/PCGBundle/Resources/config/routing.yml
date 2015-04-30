@@ -1,3 +1,8 @@
+mxzpcg_characters:
+    resource: "@MXZPCGBundle/Resources/config/routing/characters.yml"
+    prefix:   /characters
+
 mxzpcg_homepage:
     path:     /hello/{name}
     defaults: { _controller: MXZPCGBundle:Default:index }
+

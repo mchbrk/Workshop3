@@ -1,0 +1,94 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Characters</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ entity.name }}</td>
+            </tr>
+            <tr>
+                <th>Level</th>
+                <td>{{ entity.level }}</td>
+            </tr>
+            <tr>
+                <th>Alignment</th>
+                <td>{{ entity.alignment }}</td>
+            </tr>
+            <tr>
+                <th>Stats</th>
+                <td>
+                <table>
+                    <tr><td>STR:{{ entity.STR }}</td></tr>
+                    <tr><td>DEX:{{ entity.DEX }}</td></tr>
+                    <tr><td>CON:{{ entity.CON }}</td></tr>
+                    <tr><td>INT:{{ entity.INTe }}</td></tr>
+                    <tr><td>WIS:{{ entity.WIS }}</td></tr>
+                    <tr><td>CHA:{{ entity.CHA }}</td></tr>
+                </table>
+                </td>
+            </tr>
+            <tr>
+                <th>Size</th>
+                <td>{{ entity.size }}</td>
+            </tr>
+            <tr>
+                <th>Hp</th>
+                <td>{{ entity.hP }}</td>
+            </tr>
+            <tr>
+                <th>Dr</th>
+                <td>{{ entity.dR }}</td>
+            </tr>
+            <tr>
+                <th>Initiative</th>
+                <td>{{ entity.initiative }}</td>
+            </tr>
+            <tr>
+                <th>Skills</th>
+                <td>{{ entity.skills }}</td>
+            </tr>
+            <tr>
+                <th>Feats</th>
+                <td>{{ entity.feats }}</td>
+            </tr>
+            <tr>
+                <th>Specialabilities</th>
+                <td>{{ entity.specialAbilities }}</td>
+            </tr>
+            <tr>
+                <th>Languages</th>
+                <td>{{ entity.languages }}</td>
+            </tr>
+            <tr>
+                <th>Xp</th>
+                <td>{{ entity.xP }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('characters') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('characters_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('characters_addxp', { 'id': entity.id }) }}">
+            Add XP
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
