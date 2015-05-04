@@ -229,7 +229,7 @@ class CharactersController extends Controller
 
         $entity = $em->getRepository('MXZPCGBundle:Characters')->find($id);
 
-        $addXPForm = $this->createAddXPForm($entity);
+        $addXPForm = $this->createAddXPForm($entity, $id);
 
         return $this->render('MXZPCGBundle:Characters:addxp.html.twig', array(
             'entity'      => $entity,
@@ -245,16 +245,40 @@ class CharactersController extends Controller
      * @return \Symfony\Component\Form\Form The form
      */
 
-    private function createaddXPForm(Characters $entity)
+    private function createaddXPForm(Characters $entity, $id)
     {
         $form = $this->createForm(new addXPType(), $entity, array(
-            'action' => $this->generateUrl('characters_addxp', array('id' => $entity->getId())),
-            'method' => 'PUT',
+            'action' => $this->generateUrl('characters_updatexp', array('id' => $id)),
+            'method' => 'POST',
         ));
-
         $form->add('submit', 'submit', array('label' => 'addXP'));
 
         return $form;
     }
+    public function updatexpAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
 
+        $entity = $em->getRepository('MXZPCGBundle:Characters')->find($id);
+        if (!$entity) {
+            throw $this->createNotFoundException('Unable to find Characters entity.');
+        }
+        $addXPForm = $this->createaddXPForm(new Characters(), $id);
+        $addXPForm->handleRequest($request);
+        var_dump($addXPForm->getData());
+        if ($addXPForm->isValid()) {
+
+            \Doctrine\Common\Util\Debug::dump($entity, 1);
+            $entity->addXP($addXPForm->getData()->getXP());
+            $em->persist($entity);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('characters_show', array('id' => $id)));
+        }
+
+        return $this->render('MXZPCGBundle:Characters:show.html.twig', array(
+            'entity'      => $entity,
+
+        ));
+    }
 }

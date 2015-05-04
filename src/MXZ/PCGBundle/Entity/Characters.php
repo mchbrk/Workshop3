@@ -579,7 +579,92 @@ class Characters
     }
 
     public function addXP($xp){
-        return $this->setXP($this->getXP()+$xp);
+
+        $this->setXP( $this->getXP() + $xp);
     }
 
+    /**
+     * @var integer
+     */
+    private $unspent_levels;
+
+    /**
+     * @var integer
+     */
+    private $unspent_feats;
+
+    /**
+     * @var integer
+     */
+    private $unspent_skills;
+
+
+    /**
+     * Set unspent_levels
+     *
+     * @param integer $unspentLevels
+     * @return Characters
+     */
+    public function setUnspentLevels($unspentLevels)
+    {
+        $this->unspent_levels = $unspentLevels;
+
+        return $this;
+    }
+
+    /**
+     * Get unspent_levels
+     *
+     * @return integer 
+     */
+    public function getUnspentLevels()
+    {
+        return $this->unspent_levels;
+    }
+
+    /**
+     * Set unspent_feats
+     *
+     * @param integer $unspentFeats
+     * @return Characters
+     */
+    public function setUnspentFeats($unspentFeats)
+    {
+        $this->unspent_feats = $unspentFeats;
+
+        return $this;
+    }
+
+    /**
+     * Get unspent_feats
+     *
+     * @return integer 
+     */
+    public function getUnspentFeats()
+    {
+        return $this->unspent_feats;
+    }
+
+    /**
+     * Set unspent_skills
+     *
+     * @param integer $unspentSkills
+     * @return Characters
+     */
+    public function setUnspentSkills($unspentSkills)
+    {
+        $this->unspent_skills = $unspentSkills;
+
+        return $this;
+    }
+
+    /**
+     * Get unspent_skills
+     *
+     * @return integer 
+     */
+    public function getUnspentSkills()
+    {
+        return $this->unspent_skills;
+    }
 }

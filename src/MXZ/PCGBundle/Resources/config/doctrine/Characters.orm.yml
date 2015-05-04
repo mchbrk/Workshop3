@@ -93,4 +93,13 @@ MXZ\PCGBundle\Entity\Characters:
         xP:
             type: integer
             column: XP
+        unspent_levels:
+            type: integer
+            column: unspent_levels
+        unspent_feats:
+            type: integer
+            column: unspent_feats
+        unspent_skills:
+            type: integer
+            column: unspent_skills
     lifecycleCallbacks: {  }

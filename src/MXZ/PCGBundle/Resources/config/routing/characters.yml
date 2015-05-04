@@ -33,3 +33,8 @@ characters_addxp:
     path:     /{id}/addXP
     defaults: { _controller: "MXZPCGBundle:Characters:addxp" }
     methods:  [PUT, GET, POST, DELETE]
+
+characters_updatexp:
+    path:     /{id}/updatexp
+    defaults: { _controller: "MXZPCGBundle:Characters:updatexp" }
+    methods:  [POST, PUT]

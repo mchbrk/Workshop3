@@ -32,6 +32,30 @@ class CharactersType extends AbstractType
             ->add('race', 'entity', array(
                 'class' => 'MXZPCGBundle:Races',
                 'property' => 'race',))
+            ->add('STR', 'entity', array(
+                'class' => 'MXZPCGBundle:AbilityScores',
+                'property' => 'id',
+            ))
+            ->add('DEX', 'entity', array(
+                'class' => 'MXZPCGBundle:AbilityScores',
+                'property' => 'id',
+            ))
+            ->add('CON', 'entity', array(
+                'class' => 'MXZPCGBundle:AbilityScores',
+                'property' => 'id',
+            ))
+            ->add('INTe', 'entity', array(
+                'class' => 'MXZPCGBundle:AbilityScores',
+                'property' => 'id',
+            ))
+            ->add('WIS', 'entity', array(
+                'class' => 'MXZPCGBundle:AbilityScores',
+                'property' => 'id',
+            ))
+            ->add('CHA', 'entity', array(
+                'class' => 'MXZPCGBundle:AbilityScores',
+                'property' => 'id',
+            ))
             ->add('xP')
         ;
     }

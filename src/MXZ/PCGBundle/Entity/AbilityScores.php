@@ -54,4 +54,8 @@ class AbilityScores
 
     private $characters;
 
+    public function __toString(){
+        return $this->getId() .' ' . $this->getModifier();
+    }
+
 }

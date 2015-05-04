@@ -1,0 +1,35 @@
+MXZ\UserBundle\Entity\Campaign:
+    type: entity
+    table: null
+    repositoryClass: MXZ\UserBundle\Entity\CampaignRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        gmid:
+            targetEntity: User
+            inversedBy: campaign
+            joinColumn:
+                name: gmid
+                referencedColumnName: id
+    manyToMany:
+         players:
+             targetEntity: User
+             joinTable:
+                 name: players_campaigns
+                 joinColumns:
+                     campaign_id:
+                        referencedColumnName: id
+                 inverseJoinColumns:
+                     players_id:
+                        referencedColumnName: id
+    fields:
+        name:
+            type: string
+            length: 255
+            column: name
+
+    lifecycleCallbacks: {  }

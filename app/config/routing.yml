@@ -1,3 +1,7 @@
+mxz_user:
+    resource: "@MXZUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
 mxzpcg:
     resource: "@MXZPCGBundle/Resources/config/routing.yml"
     prefix:   /
@@ -5,3 +9,6 @@ mxzpcg:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

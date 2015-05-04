@@ -389,7 +389,7 @@ class Characters
         return $this->xP;
     }
 
-    public function __construct($level='0,0,0,0,0,0,0,0,0,0,0', $str=0, $dex=0, $con=0, $inte=0, $wis=0, $cha=0, $size='medium', $hP=0, $dR=0, $initiative=0, $skills='0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0', $feats='', $special_abilities='', $languages='', $XP=0){
+    public function __construct($level='0,0,0,0,0,0,0,0,0,0,0', $str=null, $dex=null, $con=null, $inte=null, $wis=null, $cha=null, $size='medium', $hP=0, $dR=0, $initiative=0, $skills='0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0', $feats='', $special_abilities='', $languages='', $XP=0){
 
         $this->STR=$str;
         $this->DEX=$dex;
@@ -577,4 +577,10 @@ class Characters
     {
         return $this->CHA;
     }
+
+    public function addXP($xp){
+
+        $this->setXP( $this->getXP() + $xp);
+    }
+
 }
