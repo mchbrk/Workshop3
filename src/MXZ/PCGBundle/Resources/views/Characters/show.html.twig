@@ -15,7 +15,9 @@
             </tr>
             <tr>
                 <th>Level</th>
-                <td>{{ entity.level }}</td>
+                <td><ul>{% for lvl in entity.level %}
+                <li>{{ lvl }}</li>
+                {% endfor %}</ul></td>
             </tr>
             <tr>
                 <th>Alignment</th>
@@ -52,11 +54,15 @@
             </tr>
             <tr>
                 <th>Skills</th>
-                <td>{{ entity.skills }}</td>
+                <td><ul>{% for skill in entity.skills %}
+                <li>{{ skill }}</li>
+                {% endfor %}</ul></td>
             </tr>
             <tr>
                 <th>Feats</th>
-                <td>{{ entity.feats }}</td>
+                <td><ul>{% for feat in entity.feats %}
+                    <li>{{ feat }}</li>
+                {% endfor %}</ul></td>
             </tr>
             <tr>
                 <th>Specialabilities</th>
@@ -69,6 +75,22 @@
             <tr>
                 <th>Xp</th>
                 <td>{{ entity.xP }}</td>
+            </tr>
+            <tr>
+                <th>Unspent Levels</th>
+                <td>{{ entity.unspentLevels }}</td>
+            </tr>
+            <tr>
+                <th>Unspent Feats</th>
+                <td>{{ entity.unspentFeats }}</td>
+            </tr>
+            <tr>
+                <th>Unspent Skills</th>
+                <td>{{ entity.unspentSkills }}</td>
+            </tr>
+            <tr>
+                <th>Unspent Ability Scores</th>
+                <td>{{ entity.unspentAs }}</td>
             </tr>
         </tbody>
     </table>
@@ -87,6 +109,11 @@
     <li>
         <a href="{{ path('characters_addxp', { 'id': entity.id }) }}">
             Add XP
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('characters_gainlvl', { 'id': entity.id }) }}">
+            Gain Levels
         </a>
     </li>
     <li>{{ form(delete_form) }}</li>

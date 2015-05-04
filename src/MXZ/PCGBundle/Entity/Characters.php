@@ -22,11 +22,6 @@ class Characters
     /**
      * @var string
      */
-    private $level;
-
-    /**
-     * @var string
-     */
     private $alignment;
 
     /**
@@ -53,16 +48,6 @@ class Characters
      * @var integer
      */
     private $initiative;
-
-    /**
-     * @var string
-     */
-    private $skills;
-
-    /**
-     * @var string
-     */
-    private $feats;
 
     /**
      * @var string
@@ -111,29 +96,6 @@ class Characters
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * Set level
-     *
-     * @param string $level
-     * @return Characters
-     */
-    public function setLevel($level)
-    {
-        $this->level = $level;
-
-        return $this;
-    }
-
-    /**
-     * Get level
-     *
-     * @return string 
-     */
-    public function getLevel()
-    {
-        return $this->level;
     }
 
     /**
@@ -275,52 +237,6 @@ class Characters
     }
 
     /**
-     * Set skills
-     *
-     * @param integer $skills
-     * @return Characters
-     */
-    public function setSkills($skills)
-    {
-        $this->skills = $skills;
-
-        return $this;
-    }
-
-    /**
-     * Get skills
-     *
-     * @return integer 
-     */
-    public function getSkills()
-    {
-        return $this->skills;
-    }
-
-    /**
-     * Set feats
-     *
-     * @param string $feats
-     * @return Characters
-     */
-    public function setFeats($feats)
-    {
-        $this->feats = $feats;
-
-        return $this;
-    }
-
-    /**
-     * Get feats
-     *
-     * @return string 
-     */
-    public function getFeats()
-    {
-        return $this->feats;
-    }
-
-    /**
      * Set specialAbilities
      *
      * @param string $specialAbilities
@@ -389,7 +305,7 @@ class Characters
         return $this->xP;
     }
 
-    public function __construct($level='0,0,0,0,0,0,0,0,0,0,0', $str=null, $dex=null, $con=null, $inte=null, $wis=null, $cha=null, $size='medium', $hP=0, $dR=0, $initiative=0, $skills='0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0', $feats='', $special_abilities='', $languages='', $XP=0){
+    public function __construct($level=array(0,0,0,0,0,0,0,0,0,0,0), $str=null, $dex=null, $con=null, $inte=null, $wis=null, $cha=null, $size='medium', $hP=0, $dR=0, $initiative=0, $skills=array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), $feats=array(0,0,0), $special_abilities='', $languages='', $XP=0, $unspent_levels=0, $unspent_feats=0, $unspent_skills=0, $unspent_as=0){
 
         $this->STR=$str;
         $this->DEX=$dex;
@@ -408,6 +324,11 @@ class Characters
         $this->specialAbilities=$special_abilities;
         $this->languages=$languages;
         $this->xP=$XP;
+
+        $this->unspent_as=$unspent_as;
+        $this->unspent_feats=$unspent_feats;
+        $this->unspent_levels=$unspent_levels;
+        $this->unspent_skills=$unspent_skills;
     }
 
     /**
@@ -666,5 +587,117 @@ class Characters
     public function getUnspentSkills()
     {
         return $this->unspent_skills;
+    }
+    /**
+     * @var integer
+     */
+    private $unspent_as;
+
+
+    /**
+     * Set unspent_as
+     *
+     * @param integer $unspentAs
+     * @return Characters
+     */
+    public function setUnspentAs($unspentAs)
+    {
+        $this->unspent_as = $unspentAs;
+
+        return $this;
+    }
+
+    /**
+     * Get unspent_as
+     *
+     * @return integer 
+     */
+    public function getUnspentAs()
+    {
+        return $this->unspent_as;
+    }
+    /**
+     * @var array
+     */
+    private $level;
+
+    /**
+     * @var array
+     */
+    private $skills;
+
+    /**
+     * @var array
+     */
+    private $feats;
+
+
+    /**
+     * Set level
+     *
+     * @param array $level
+     * @return Characters
+     */
+    public function setLevel($level)
+    {
+        $this->level = $level;
+
+        return $this;
+    }
+
+    /**
+     * Get level
+     *
+     * @return array 
+     */
+    public function getLevel()
+    {
+        return $this->level;
+    }
+
+    /**
+     * Set skills
+     *
+     * @param array $skills
+     * @return Characters
+     */
+    public function setSkills($skills)
+    {
+        $this->skills = $skills;
+
+        return $this;
+    }
+
+    /**
+     * Get skills
+     *
+     * @return array 
+     */
+    public function getSkills()
+    {
+        return $this->skills;
+    }
+
+    /**
+     * Set feats
+     *
+     * @param array $feats
+     * @return Characters
+     */
+    public function setFeats($feats)
+    {
+        $this->feats = $feats;
+
+        return $this;
+    }
+
+    /**
+     * Get feats
+     *
+     * @return array 
+     */
+    public function getFeats()
+    {
+        return $this->feats;
     }
 }

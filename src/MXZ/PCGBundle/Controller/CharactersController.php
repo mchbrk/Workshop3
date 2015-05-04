@@ -281,4 +281,26 @@ class CharactersController extends Controller
 
         ));
     }
+
+    public function gainlvlAction($id){
+        $em = $this->getDoctrine()->getManager();
+        $character = $em->getRepository('MXZPCGBundle:Characters')->find($id);
+        $levels = $em->getRepository('MXZPCGBundle:XP')->findAll();
+
+        $new_char_level=0;
+        $char_xp=$character->getXP();
+        foreach($levels as $level){
+            if($level->getXP()>$char_xp){
+                $new_char_level=$level->getId();
+                break;
+            }
+        }
+        $total_levels=array_sum($character->getLevel());
+
+        $character->setUnspentLevels($new_char_level-$total_levels);
+        $em->persist($character);
+        $em->flush();
+
+        return $this->redirect($this->generateUrl('characters_show', array('id' => $id)));
+    }
 }

@@ -38,3 +38,8 @@ characters_updatexp:
     path:     /{id}/updatexp
     defaults: { _controller: "MXZPCGBundle:Characters:updatexp" }
     methods:  [POST, PUT]
+
+characters_gainlvl:
+    path:     /{id}/gainlvl
+    defaults: { _controller: "MXZPCGBundle:Characters:gainlvl" }
+    methods:  [POST, GET, PUT]

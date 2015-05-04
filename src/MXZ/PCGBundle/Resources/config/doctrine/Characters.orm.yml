@@ -56,8 +56,8 @@ MXZ\PCGBundle\Entity\Characters:
             type: string
             length: 255
         level:
-            type: string
-            length: 255
+            type: array
+            column: level
         alignment:
             type: string
             length: '2'
@@ -75,12 +75,10 @@ MXZ\PCGBundle\Entity\Characters:
             type: integer
             column: Initiative
         skills:
-            type: string
-            length: 255
+            type: array
             column: Skills
         feats:
-            type: string
-            length: 255
+            type: array
             column: Feats
         specialAbilities:
             type: string
@@ -102,4 +100,7 @@ MXZ\PCGBundle\Entity\Characters:
         unspent_skills:
             type: integer
             column: unspent_skills
+        unspent_as:
+            type: integer
+            column: unspent_as
     lifecycleCallbacks: {  }
