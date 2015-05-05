@@ -68,7 +68,7 @@ class Characters
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -91,7 +91,7 @@ class Characters
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -114,7 +114,7 @@ class Characters
     /**
      * Get alignment
      *
-     * @return string 
+     * @return string
      */
     public function getAlignment()
     {
@@ -137,7 +137,7 @@ class Characters
     /**
      * Get race
      *
-     * @return integer 
+     * @return integer
      */
     public function getRace()
     {
@@ -160,7 +160,7 @@ class Characters
     /**
      * Get size
      *
-     * @return string 
+     * @return string
      */
     public function getSize()
     {
@@ -183,7 +183,7 @@ class Characters
     /**
      * Get hP
      *
-     * @return integer 
+     * @return integer
      */
     public function getHP()
     {
@@ -206,7 +206,7 @@ class Characters
     /**
      * Get dR
      *
-     * @return string 
+     * @return string
      */
     public function getDR()
     {
@@ -229,7 +229,7 @@ class Characters
     /**
      * Get initiative
      *
-     * @return integer 
+     * @return integer
      */
     public function getInitiative()
     {
@@ -252,7 +252,7 @@ class Characters
     /**
      * Get specialAbilities
      *
-     * @return string 
+     * @return string
      */
     public function getSpecialAbilities()
     {
@@ -275,7 +275,7 @@ class Characters
     /**
      * Get languages
      *
-     * @return string 
+     * @return string
      */
     public function getLanguages()
     {
@@ -298,37 +298,38 @@ class Characters
     /**
      * Get xP
      *
-     * @return integer 
+     * @return integer
      */
     public function getXP()
     {
         return $this->xP;
     }
 
-    public function __construct($level=array(0,0,0,0,0,0,0,0,0,0,0), $str=null, $dex=null, $con=null, $inte=null, $wis=null, $cha=null, $size='medium', $hP=0, $dR=0, $initiative=0, $skills=array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0), $feats=array(0,0,0), $special_abilities='', $languages='', $XP=0, $unspent_levels=0, $unspent_feats=0, $unspent_skills=0, $unspent_as=0){
+    public function __construct($level = array(), $str = null, $dex = null, $con = null, $inte = null, $wis = null, $cha = null, $size = 'medium', $hP = 0, $dR = 0, $initiative = 0, $skills = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0), $feats = array(), $special_abilities = '', $languages = '', $XP = 0, $unspent_levels = 0, $unspent_feats = 0, $unspent_skills = 0, $unspent_as = 0)
+    {
 
-        $this->STR=$str;
-        $this->DEX=$dex;
-        $this->CON=$con;
-        $this->INTe=$inte;
-        $this->WIS=$wis;
-        $this->CHA=$cha;
+        $this->STR = $str;
+        $this->DEX = $dex;
+        $this->CON = $con;
+        $this->INTe = $inte;
+        $this->WIS = $wis;
+        $this->CHA = $cha;
 
-        $this->level=$level;
-        $this->size=$size;
-        $this->hP=$hP;
-        $this->dR=$dR;
-        $this->initiative=$initiative;
-        $this->skills=$skills;
-        $this->feats=$feats;
-        $this->specialAbilities=$special_abilities;
-        $this->languages=$languages;
-        $this->xP=$XP;
+        $this->level = $level;
+        $this->size = $size;
+        $this->hP = $hP;
+        $this->dR = $dR;
+        $this->initiative = $initiative;
+        $this->skills = $skills;
+        $this->feats = $feats;
+        $this->specialAbilities = $special_abilities;
+        $this->languages = $languages;
+        $this->xP = $XP;
 
-        $this->unspent_as=$unspent_as;
-        $this->unspent_feats=$unspent_feats;
-        $this->unspent_levels=$unspent_levels;
-        $this->unspent_skills=$unspent_skills;
+        $this->unspent_as = $unspent_as;
+        $this->unspent_feats = $unspent_feats;
+        $this->unspent_levels = $unspent_levels;
+        $this->unspent_skills = $unspent_skills;
     }
 
     /**
@@ -400,7 +401,7 @@ class Characters
     /**
      * Get DEX
      *
-     * @return \MXZ\PCGBundle\Entity\AbilityScores 
+     * @return \MXZ\PCGBundle\Entity\AbilityScores
      */
     public function getDEX()
     {
@@ -423,7 +424,7 @@ class Characters
     /**
      * Get CON
      *
-     * @return \MXZ\PCGBundle\Entity\AbilityScores 
+     * @return \MXZ\PCGBundle\Entity\AbilityScores
      */
     public function getCON()
     {
@@ -446,7 +447,7 @@ class Characters
     /**
      * Get INTe
      *
-     * @return \MXZ\PCGBundle\Entity\AbilityScores 
+     * @return \MXZ\PCGBundle\Entity\AbilityScores
      */
     public function getINTe()
     {
@@ -469,7 +470,7 @@ class Characters
     /**
      * Get WIS
      *
-     * @return \MXZ\PCGBundle\Entity\AbilityScores 
+     * @return \MXZ\PCGBundle\Entity\AbilityScores
      */
     public function getWIS()
     {
@@ -492,16 +493,17 @@ class Characters
     /**
      * Get CHA
      *
-     * @return \MXZ\PCGBundle\Entity\AbilityScores 
+     * @return \MXZ\PCGBundle\Entity\AbilityScores
      */
     public function getCHA()
     {
         return $this->CHA;
     }
 
-    public function addXP($xp){
+    public function addXP($xp)
+    {
 
-        $this->setXP( $this->getXP() + $xp);
+        $this->setXP($this->getXP() + $xp);
     }
 
     /**
@@ -536,7 +538,7 @@ class Characters
     /**
      * Get unspent_levels
      *
-     * @return integer 
+     * @return integer
      */
     public function getUnspentLevels()
     {
@@ -559,7 +561,7 @@ class Characters
     /**
      * Get unspent_feats
      *
-     * @return integer 
+     * @return integer
      */
     public function getUnspentFeats()
     {
@@ -582,12 +584,13 @@ class Characters
     /**
      * Get unspent_skills
      *
-     * @return integer 
+     * @return integer
      */
     public function getUnspentSkills()
     {
         return $this->unspent_skills;
     }
+
     /**
      * @var integer
      */
@@ -610,12 +613,13 @@ class Characters
     /**
      * Get unspent_as
      *
-     * @return integer 
+     * @return integer
      */
     public function getUnspentAs()
     {
         return $this->unspent_as;
     }
+
     /**
      * @var array
      */
@@ -648,7 +652,7 @@ class Characters
     /**
      * Get level
      *
-     * @return array 
+     * @return array
      */
     public function getLevel()
     {
@@ -671,7 +675,7 @@ class Characters
     /**
      * Get skills
      *
-     * @return array 
+     * @return array
      */
     public function getSkills()
     {
@@ -694,7 +698,7 @@ class Characters
     /**
      * Get feats
      *
-     * @return array 
+     * @return array
      */
     public function getFeats()
     {

@@ -33,7 +33,7 @@ class XP
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -56,7 +56,7 @@ class XP
     /**
      * Get xp
      *
-     * @return integer 
+     * @return integer
      */
     public function getXp()
     {
@@ -79,7 +79,7 @@ class XP
     /**
      * Get feats
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getFeats()
     {
@@ -102,7 +102,7 @@ class XP
     /**
      * Get abilityScores
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getAbilityScores()
     {

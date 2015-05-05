@@ -63,7 +63,7 @@ class Feats
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -86,7 +86,7 @@ class Feats
     /**
      * Get feat
      *
-     * @return string 
+     * @return string
      */
     public function getFeat()
     {
@@ -109,7 +109,7 @@ class Feats
     /**
      * Get prerequisites
      *
-     * @return string 
+     * @return string
      */
     public function getPrerequisites()
     {
@@ -132,7 +132,7 @@ class Feats
     /**
      * Get benefit
      *
-     * @return string 
+     * @return string
      */
     public function getBenefit()
     {
@@ -155,7 +155,7 @@ class Feats
     /**
      * Get url
      *
-     * @return string 
+     * @return string
      */
     public function getUrl()
     {
@@ -178,7 +178,7 @@ class Feats
     /**
      * Get combat
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getCombat()
     {
@@ -201,7 +201,7 @@ class Feats
     /**
      * Get panache
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getPanache()
     {
@@ -224,7 +224,7 @@ class Feats
     /**
      * Get style
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getStyle()
     {
@@ -247,7 +247,7 @@ class Feats
     /**
      * Get metamagic
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getMetamagic()
     {
@@ -270,7 +270,7 @@ class Feats
     /**
      * Get teamwork
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getTeamwork()
     {

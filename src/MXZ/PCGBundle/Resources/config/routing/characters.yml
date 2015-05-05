@@ -43,3 +43,13 @@ characters_gainlvl:
     path:     /{id}/gainlvl
     defaults: { _controller: "MXZPCGBundle:Characters:gainlvl" }
     methods:  [POST, GET, PUT]
+
+characters_gainclasslvl:
+    path:     /{id}/gainclasslvl
+    defaults: { _controller: "MXZPCGBundle:Characters:gainclasslvl" }
+    methods:  [POST, GET, PUT]
+
+characters_gainskills:
+    path:     /{id}/gainskills
+    defaults: { _controller: "MXZPCGBundle:Characters:gainskills" }
+    methods:  [POST, GET, PUT]

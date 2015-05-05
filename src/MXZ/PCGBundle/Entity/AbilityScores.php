@@ -22,7 +22,7 @@ class AbilityScores
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -45,7 +45,7 @@ class AbilityScores
     /**
      * Get modifier
      *
-     * @return integer 
+     * @return integer
      */
     public function getModifier()
     {
@@ -54,8 +54,9 @@ class AbilityScores
 
     private $characters;
 
-    public function __toString(){
-        return $this->getId() .' ' . $this->getModifier();
+    public function __toString()
+    {
+        return $this->getId() . ' ' . $this->getModifier();
     }
 
 }

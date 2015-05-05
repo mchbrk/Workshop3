@@ -30,6 +30,7 @@ class CharactersController extends Controller
             'entities' => $entities,
         ));
     }
+
     /**
      * Creates a new Characters entity.
      *
@@ -45,12 +46,12 @@ class CharactersController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('characters_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('characters_gainlvl', array('id' => $entity->getId())));
         }
 
         return $this->render('MXZPCGBundle:Characters:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ));
     }
 
@@ -80,11 +81,11 @@ class CharactersController extends Controller
     public function newAction()
     {
         $entity = new Characters();
-        $form   = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity);
 
         return $this->render('MXZPCGBundle:Characters:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ));
     }
 
@@ -105,7 +106,7 @@ class CharactersController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('MXZPCGBundle:Characters:show.html.twig', array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
         ));
     }
@@ -128,19 +129,19 @@ class CharactersController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('MXZPCGBundle:Characters:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-    * Creates a form to edit a Characters entity.
-    *
-    * @param Characters $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to edit a Characters entity.
+     *
+     * @param Characters $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createEditForm(Characters $entity)
     {
         $form = $this->createForm(new CharactersType(), $entity, array(
@@ -152,6 +153,7 @@ class CharactersController extends Controller
 
         return $form;
     }
+
     /**
      * Edits an existing Characters entity.
      *
@@ -177,11 +179,12 @@ class CharactersController extends Controller
         }
 
         return $this->render('MXZPCGBundle:Characters:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
+
     /**
      * Deletes a Characters entity.
      *
@@ -219,11 +222,11 @@ class CharactersController extends Controller
             ->setAction($this->generateUrl('characters_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
-        ;
+            ->getForm();
     }
 
-    public function addxpAction($id){
+    public function addxpAction($id)
+    {
 
         $em = $this->getDoctrine()->getManager();
 
@@ -232,8 +235,8 @@ class CharactersController extends Controller
         $addXPForm = $this->createAddXPForm($entity, $id);
 
         return $this->render('MXZPCGBundle:Characters:addxp.html.twig', array(
-            'entity'      => $entity,
-            'addxp_form'   => $addXPForm->createView(),
+            'entity' => $entity,
+            'addxp_form' => $addXPForm->createView(),
         ));
     }
 
@@ -255,6 +258,7 @@ class CharactersController extends Controller
 
         return $form;
     }
+
     public function updatexpAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
@@ -265,42 +269,178 @@ class CharactersController extends Controller
         }
         $addXPForm = $this->createaddXPForm(new Characters(), $id);
         $addXPForm->handleRequest($request);
-        var_dump($addXPForm->getData());
         if ($addXPForm->isValid()) {
-
-            \Doctrine\Common\Util\Debug::dump($entity, 1);
             $entity->addXP($addXPForm->getData()->getXP());
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('characters_show', array('id' => $id)));
+            return $this->redirect($this->generateUrl('characters_gainlvl', array('id' => $id)));
         }
 
         return $this->render('MXZPCGBundle:Characters:show.html.twig', array(
-            'entity'      => $entity,
+            'entity' => $entity,
 
         ));
     }
 
-    public function gainlvlAction($id){
+    public function gainlvlAction($id)
+    {
         $em = $this->getDoctrine()->getManager();
         $character = $em->getRepository('MXZPCGBundle:Characters')->find($id);
         $levels = $em->getRepository('MXZPCGBundle:XP')->findAll();
 
-        $new_char_level=0;
-        $char_xp=$character->getXP();
-        foreach($levels as $level){
-            if($level->getXP()>$char_xp){
-                $new_char_level=$level->getId();
+        $new_char_level = 0;
+        $char_xp = $character->getXP();
+        foreach ($levels as $level) {
+            if ($level->getXP() > $char_xp) {
+                $new_char_level = $level->getId() - 1;
                 break;
             }
         }
-        $total_levels=array_sum($character->getLevel());
-
-        $character->setUnspentLevels($new_char_level-$total_levels);
+        $total_levels = array_sum($character->getLevel());
+        $unspent_as = 0;
+        $unspent_feats = 0;
+        for ($i = $total_levels + $character->getUnspentLevels(); $i < $new_char_level; $i++) {
+            if ($levels[$i]->getFeats() == 1) {
+                $unspent_feats += 1;
+            }
+            if ($levels[$i]->getAbilityScores() == 1) {
+                $unspent_as += 1;
+            }
+        }
+        $character->setUnspentFeats($character->getUnspentFeats() + $unspent_feats);
+        $character->setUnspentAs($character->getUnspentAs() + $unspent_as);
+        $character->setUnspentLevels($new_char_level - $total_levels);
         $em->persist($character);
         $em->flush();
 
         return $this->redirect($this->generateUrl('characters_show', array('id' => $id)));
     }
+
+    public function gainclasslvlAction($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $character = $em->getRepository('MXZPCGBundle:Characters')->find($id);
+
+        $connection = $em->getConnection();
+        $statement = $connection->prepare("SELECT * FROM workshop3.classes");
+        $statement->execute();
+        $classes = $statement->fetchAll();
+        $levels = $character->getLevel();
+
+        $defaultData = $levels;
+        $fb = $this->createFormBuilder($defaultData);
+        $i = 0;
+        foreach ($classes as $class) {
+            $fb->add("$i", 'integer', array('label' => $class["name"], 'required' => false));
+            $i++;
+        }
+
+        $fb->add('send', 'submit');
+        $gainclass_form = $fb->getForm();
+        $gainclass_form->handleRequest($request);
+
+
+        if ($gainclass_form->isValid()) {
+            $data = $gainclass_form->getData();
+            $lvl = 0;
+            $int_mod = $character->getINTe()->getModifier();
+            $con_mod = $character->getCON()->getModifier();
+            $uns_skill = 0;
+            $hp = 0;
+
+
+            foreach ($data as $key => $val) {
+                if (isset($val)) {
+                    if (isset($levels[$key])) {
+                        $lvl += $val - $levels[$key];
+                    } else {
+                        $lvl += $val;
+                    }
+                    $levels[$key] = $val;
+
+                    $tl = array_sum($character->getLevel());
+                    if ($tl == 0) {
+                        $hp += $classes[$key]["hp_dice"] + $con_mod;
+                        for ($i = 0; $i < $val - 1; $i++) {
+                            $hp += mt_rand(1, $classes[$key]["hp_dice"]) + $con_mod;
+                        }
+                    } else {
+                        for ($i = 0; $i < $val; $i++) {
+                            $temp = mt_rand(1, $classes[$key]["hp_dice"]) + $con_mod;
+                            if ($temp <= 0) {
+                                $hp += 1;
+                            } else {
+                                $hp += $temp;
+                            }
+                        }
+                    }
+
+                    if (($int_mod + $classes[$key]["skill_points"]) <= 0) {
+                        $uns_skill += $val;
+                    } else {
+                        $uns_skill += $val * ($int_mod + $classes[$key]["skill_points"]);
+                    }
+                }
+            }
+            $character->setHP($character->getHP() + $hp);
+            $character->setUnspentLevels($character->getUnspentLevels() - $lvl);
+            $character->setUnspentSkills($character->getUnspentSkills() + $uns_skill);
+            $character->setLevel($levels);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('characters_show', array('id' => $id)));
+        }
+
+        return $this->render('MXZPCGBundle:Characters:gainclass.html.twig', array(
+            'entity' => $character,
+            'form' => $gainclass_form->createView(),
+        ));
+    }
+
+
+    public function gainskillsAction($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $character = $em->getRepository('MXZPCGBundle:Characters')->find($id);
+
+        $connection = $em->getConnection();
+        $statement = $connection->prepare("SELECT * FROM workshop3.skills");
+        $statement->execute();
+        $skills = $statement->fetchAll();
+        $char_skills = $character->getSkills();
+
+        $defaultData = $char_skills;
+        $fb = $this->createFormBuilder($defaultData);
+        $i = 0;
+        foreach ($skills as $skill) {
+            $fb->add("$i", 'integer', array('label' => $skill["skill"], 'required' => false));
+            $i++;
+        }
+
+        $fb->add('send', 'submit');
+        $form = $fb->getForm();
+        $form->handleRequest($request);
+
+
+        if ($form->isValid()) {
+            $data = $form->getData();
+            $spent_skill=0;
+            foreach ($data as $key => $val) {
+                $spent_skill+=$val-$char_skills[$key];
+                $char_skills[$key]=$val;
+            }
+            $character->setUnspentSkills($character->getUnspentSkills() - $spent_skill);
+            $character->setSkills($char_skills);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('characters_show', array('id' => $id)));
+        }
+
+        return $this->render('MXZPCGBundle:Characters:gainclass.html.twig', array(
+            'entity' => $character,
+            'form' => $form->createView(),
+        ));
+    }
+
 }
