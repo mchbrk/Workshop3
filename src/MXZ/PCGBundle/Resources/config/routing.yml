@@ -3,6 +3,6 @@ mxzpcg_characters:
     prefix:   /characters
 
 mxzpcg_homepage:
-    path:     /hello/{name}
+    path:     /
     defaults: { _controller: MXZPCGBundle:Default:index }
 

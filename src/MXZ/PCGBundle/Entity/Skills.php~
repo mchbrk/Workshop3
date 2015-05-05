@@ -88,7 +88,7 @@ class Skills
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -111,7 +111,7 @@ class Skills
     /**
      * Get skill
      *
-     * @return string 
+     * @return string
      */
     public function getSkill()
     {
@@ -134,7 +134,7 @@ class Skills
     /**
      * Get ability
      *
-     * @return string 
+     * @return string
      */
     public function getAbility()
     {
@@ -157,7 +157,7 @@ class Skills
     /**
      * Get untrained
      *
-     * @return string 
+     * @return string
      */
     public function getUntrained()
     {
@@ -180,7 +180,7 @@ class Skills
     /**
      * Get bbn
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getBbn()
     {
@@ -203,7 +203,7 @@ class Skills
     /**
      * Get brd
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getBrd()
     {
@@ -226,7 +226,7 @@ class Skills
     /**
      * Get clr
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getClr()
     {
@@ -249,7 +249,7 @@ class Skills
     /**
      * Get drd
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getDrd()
     {
@@ -272,7 +272,7 @@ class Skills
     /**
      * Get ftr
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getFtr()
     {
@@ -295,7 +295,7 @@ class Skills
     /**
      * Get mnk
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getMnk()
     {
@@ -318,7 +318,7 @@ class Skills
     /**
      * Get pal
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getPal()
     {
@@ -341,7 +341,7 @@ class Skills
     /**
      * Get rgr
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getRgr()
     {
@@ -364,7 +364,7 @@ class Skills
     /**
      * Get rog
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getRog()
     {
@@ -387,7 +387,7 @@ class Skills
     /**
      * Get sor
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getSor()
     {
@@ -410,7 +410,7 @@ class Skills
     /**
      * Get wiz
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getWiz()
     {

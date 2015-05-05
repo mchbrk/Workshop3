@@ -1,0 +1,23 @@
+{% extends 'MXZPCGBundle::basic.html.twig' %}
+
+{% block header %}
+    <div class="header">
+        <a href="{{ path('mxzpcg_homepage') }}">
+            <img class='logo' src="{{ asset('bundles/mxzpcg/images/pathfinder_logo.png') }}">
+        </a>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="body-content">
+        <div class="body">
+            <h1>Welcome </h1>
+            <p>Pathfinder Character Generator and Campaign Manager is a tool for both Dungeon Masters and his players. It will help you maitain your campaign, meetings and easily level up your characters.</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+    <link href="{{ asset('bundles/mxzpcg/css/main.css') }}" rel="stylesheet" type="text/css"/>
+{% endblock %}
+

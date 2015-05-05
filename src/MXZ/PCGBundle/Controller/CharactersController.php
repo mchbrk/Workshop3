@@ -359,7 +359,7 @@ class CharactersController extends Controller
                     }
                     $levels[$key] = $val;
 
-                    $tl = array_sum($character->getLevel());
+                    $tl = $character->getLvl();
                     if ($tl == 0) {
                         $hp += $classes[$key]["hp_dice"] + $con_mod;
                         for ($i = 0; $i < $val - 1; $i++) {
@@ -383,6 +383,7 @@ class CharactersController extends Controller
                     }
                 }
             }
+            $character->setLvl($lvl+$tl);
             $character->setHP($character->getHP() + $hp);
             $character->setUnspentLevels($character->getUnspentLevels() - $lvl);
             $character->setUnspentSkills($character->getUnspentSkills() + $uns_skill);
