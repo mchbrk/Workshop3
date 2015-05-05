@@ -48,7 +48,7 @@ class Barbarian
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -71,7 +71,7 @@ class Barbarian
     /**
      * Get bAB
      *
-     * @return integer 
+     * @return integer
      */
     public function getBAB()
     {
@@ -94,7 +94,7 @@ class Barbarian
     /**
      * Get fort
      *
-     * @return integer 
+     * @return integer
      */
     public function getFort()
     {
@@ -117,7 +117,7 @@ class Barbarian
     /**
      * Get ref
      *
-     * @return integer 
+     * @return integer
      */
     public function getRef()
     {
@@ -140,7 +140,7 @@ class Barbarian
     /**
      * Get will
      *
-     * @return integer 
+     * @return integer
      */
     public function getWill()
     {
@@ -163,7 +163,7 @@ class Barbarian
     /**
      * Get special
      *
-     * @return string 
+     * @return string
      */
     public function getSpecial()
     {
@@ -186,7 +186,7 @@ class Barbarian
     /**
      * Get dice
      *
-     * @return integer 
+     * @return integer
      */
     public function getDice()
     {

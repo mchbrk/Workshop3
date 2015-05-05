@@ -70,7 +70,7 @@ class Races
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -93,7 +93,7 @@ class Races
     /**
      * Get race
      *
-     * @return string 
+     * @return string
      */
     public function getRace()
     {
@@ -116,7 +116,7 @@ class Races
     /**
      * Get sTR
      *
-     * @return integer 
+     * @return integer
      */
     public function getSTR()
     {
@@ -139,7 +139,7 @@ class Races
     /**
      * Get dEX
      *
-     * @return integer 
+     * @return integer
      */
     public function getDEX()
     {
@@ -162,7 +162,7 @@ class Races
     /**
      * Get cON
      *
-     * @return integer 
+     * @return integer
      */
     public function getCON()
     {
@@ -185,7 +185,7 @@ class Races
     /**
      * Get iNTe
      *
-     * @return integer 
+     * @return integer
      */
     public function getINTe()
     {
@@ -208,7 +208,7 @@ class Races
     /**
      * Get wIS
      *
-     * @return integer 
+     * @return integer
      */
     public function getWIS()
     {
@@ -231,7 +231,7 @@ class Races
     /**
      * Get cHA
      *
-     * @return integer 
+     * @return integer
      */
     public function getCHA()
     {
@@ -254,7 +254,7 @@ class Races
     /**
      * Get traits
      *
-     * @return string 
+     * @return string
      */
     public function getTraits()
     {
@@ -277,7 +277,7 @@ class Races
     /**
      * Get size
      *
-     * @return string 
+     * @return string
      */
     public function getSize()
     {
@@ -300,7 +300,7 @@ class Races
     /**
      * Get speed
      *
-     * @return integer 
+     * @return integer
      */
     public function getSpeed()
     {
@@ -311,6 +311,7 @@ class Races
     {
         return $this->getRace();
     }
+
     /**
      * Constructor
      */
@@ -345,7 +346,7 @@ class Races
     /**
      * Get characters
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getCharacters()
     {

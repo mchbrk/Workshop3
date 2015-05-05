@@ -103,4 +103,7 @@ MXZ\PCGBundle\Entity\Characters:
         unspent_as:
             type: integer
             column: unspent_as
+        lvl:
+            type: integer
+            column: total_level
     lifecycleCallbacks: {  }

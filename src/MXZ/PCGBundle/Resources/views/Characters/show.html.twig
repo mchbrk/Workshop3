@@ -5,117 +5,145 @@
 
     <table class="record_properties">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ entity.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ entity.name }}</td>
-            </tr>
-            <tr>
-                <th>Level</th>
-                <td><ul>{% for lvl in entity.level %}
-                <li>{{ lvl }}</li>
-                {% endfor %}</ul></td>
-            </tr>
-            <tr>
-                <th>Alignment</th>
-                <td>{{ entity.alignment }}</td>
-            </tr>
-            <tr>
-                <th>Stats</th>
-                <td>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>{{ entity.name }}</td>
+        </tr>
+        <tr>
+            <th>Level</th>
+            <td>
+                <ul>{% for lvl in entity.level %}
+                        <li>{{ lvl }}</li>
+                    {% endfor %}</ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Alignment</th>
+            <td>{{ entity.alignment }}</td>
+        </tr>
+        <tr>
+            <th>Stats</th>
+            <td>
                 <table>
-                    <tr><td>STR:{{ entity.STR }}</td></tr>
-                    <tr><td>DEX:{{ entity.DEX }}</td></tr>
-                    <tr><td>CON:{{ entity.CON }}</td></tr>
-                    <tr><td>INT:{{ entity.INTe }}</td></tr>
-                    <tr><td>WIS:{{ entity.WIS }}</td></tr>
-                    <tr><td>CHA:{{ entity.CHA }}</td></tr>
+                    <tr>
+                        <td>STR:{{ entity.STR }}</td>
+                    </tr>
+                    <tr>
+                        <td>DEX:{{ entity.DEX }}</td>
+                    </tr>
+                    <tr>
+                        <td>CON:{{ entity.CON }}</td>
+                    </tr>
+                    <tr>
+                        <td>INT:{{ entity.INTe }}</td>
+                    </tr>
+                    <tr>
+                        <td>WIS:{{ entity.WIS }}</td>
+                    </tr>
+                    <tr>
+                        <td>CHA:{{ entity.CHA }}</td>
+                    </tr>
                 </table>
-                </td>
-            </tr>
-            <tr>
-                <th>Size</th>
-                <td>{{ entity.size }}</td>
-            </tr>
-            <tr>
-                <th>Hp</th>
-                <td>{{ entity.hP }}</td>
-            </tr>
-            <tr>
-                <th>Dr</th>
-                <td>{{ entity.dR }}</td>
-            </tr>
-            <tr>
-                <th>Initiative</th>
-                <td>{{ entity.initiative }}</td>
-            </tr>
-            <tr>
-                <th>Skills</th>
-                <td><ul>{% for skill in entity.skills %}
-                <li>{{ skill }}</li>
-                {% endfor %}</ul></td>
-            </tr>
-            <tr>
-                <th>Feats</th>
-                <td><ul>{% for feat in entity.feats %}
-                    <li>{{ feat }}</li>
-                {% endfor %}</ul></td>
-            </tr>
-            <tr>
-                <th>Specialabilities</th>
-                <td>{{ entity.specialAbilities }}</td>
-            </tr>
-            <tr>
-                <th>Languages</th>
-                <td>{{ entity.languages }}</td>
-            </tr>
-            <tr>
-                <th>Xp</th>
-                <td>{{ entity.xP }}</td>
-            </tr>
-            <tr>
-                <th>Unspent Levels</th>
-                <td>{{ entity.unspentLevels }}</td>
-            </tr>
-            <tr>
-                <th>Unspent Feats</th>
-                <td>{{ entity.unspentFeats }}</td>
-            </tr>
-            <tr>
-                <th>Unspent Skills</th>
-                <td>{{ entity.unspentSkills }}</td>
-            </tr>
-            <tr>
-                <th>Unspent Ability Scores</th>
-                <td>{{ entity.unspentAs }}</td>
-            </tr>
+            </td>
+        </tr>
+        <tr>
+            <th>Size</th>
+            <td>{{ entity.size }}</td>
+        </tr>
+        <tr>
+            <th>Hp</th>
+            <td>{{ entity.hP }}</td>
+        </tr>
+        <tr>
+            <th>Dr</th>
+            <td>{{ entity.dR }}</td>
+        </tr>
+        <tr>
+            <th>Initiative</th>
+            <td>{{ entity.initiative }}</td>
+        </tr>
+        <tr>
+            <th>Skills</th>
+            <td>
+                <ul>{% for skill in entity.skills %}
+                        <li>{{ skill }}</li>
+                    {% endfor %}</ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Feats</th>
+            <td>
+                <ul>{% for feat in entity.feats %}
+                        <li>{{ feat }}</li>
+                    {% endfor %}</ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Specialabilities</th>
+            <td>{{ entity.specialAbilities }}</td>
+        </tr>
+        <tr>
+            <th>Languages</th>
+            <td>{{ entity.languages }}</td>
+        </tr>
+        <tr>
+            <th>Xp</th>
+            <td>{{ entity.xP }}</td>
+        </tr>
+        <tr>
+            <th>Unspent Levels</th>
+            <td>{{ entity.unspentLevels }}</td>
+        </tr>
+        <tr>
+            <th>Unspent Feats</th>
+            <td>{{ entity.unspentFeats }}</td>
+        </tr>
+        <tr>
+            <th>Unspent Skills</th>
+            <td>{{ entity.unspentSkills }}</td>
+        </tr>
+        <tr>
+            <th>Unspent Ability Scores</th>
+            <td>{{ entity.unspentAs }}</td>
+        </tr>
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('characters') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('characters_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('characters_addxp', { 'id': entity.id }) }}">
-            Add XP
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('characters_gainlvl', { 'id': entity.id }) }}">
-            Gain Levels
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('characters') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('characters_edit', { 'id': entity.id }) }}">
+                Edit
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('characters_addxp', { 'id': entity.id }) }}">
+                Add XP
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('characters_gainlvl', { 'id': entity.id }) }}">
+                Gain Levels
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('characters_gainclasslvl', { 'id': entity.id }) }}">
+                Advance Your Class
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('characters_gainskills', { 'id': entity.id }) }}">
+                Distribute Skill Points
+            </a>
+        </li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
 {% endblock %}

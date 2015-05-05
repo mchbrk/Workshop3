@@ -185,7 +185,7 @@ class Fighter
     /**
      * Get dice
      *
-     * @return integer 
+     * @return integer
      */
     public function getDice()
     {

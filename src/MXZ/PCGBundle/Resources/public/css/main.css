@@ -1,0 +1,44 @@
+body {
+    font-size: 15px;
+    font-family: 'Nexus Serif', serif;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background: #fffdf8 url('../images/bg-new.png') top left no-repeat;
+}
+
+.header {
+    float: left;
+    width: 250px;
+    text-align: center;
+    display: block;
+}
+
+.logo {
+    padding: 0;
+    margin: -15px 0 0 0;
+    border: 0;
+    width: 250px;
+}
+
+.body-content{
+    margin-left: 250px;
+}
+
+@font-face {
+    font-family: 'Nexus Serif';
+    src: url(nexusserif-regular.otf);
+}
+
+.body{
+    margin: 30px 10px 10px 10px;
+}
+
+h1{
+    font: 34px 'Nexus Serif', 'serif';
+    margin: 30px 0 0 0;
+}
+
+p{
+    line-height: 1.4em;
+    margin: 15px 0;
+}
